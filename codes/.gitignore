@@ -1,0 +1,13 @@
+out
+.idea
+*.iml
+
+# follow https://stackoverflow.com/a/5534865
+!data/out
+data/out/*
+!data/out/.gitkeep
+
+template/
+
+# for python script
+__pycache__

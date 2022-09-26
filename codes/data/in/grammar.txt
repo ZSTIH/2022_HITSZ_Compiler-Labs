@@ -1,0 +1,15 @@
+P -> S_list;
+S_list -> S Semicolon S_list;
+S_list -> S Semicolon;
+S -> D id;
+D -> int;
+S -> id = E;
+S -> return E;
+E -> E + A;
+E -> E - A;
+E -> A;
+A -> A * B;
+A -> B;
+B -> ( E );
+B -> id;
+B -> IntConst;
