@@ -1,11 +1,8 @@
 package cn.edu.hitsz.compiler.symtab;
 
-import cn.edu.hitsz.compiler.NotImplementedException;
 import cn.edu.hitsz.compiler.utils.FileUtils;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 符号表
@@ -24,7 +21,13 @@ public class SymbolTable {
      * @throws RuntimeException 该符号在表中不存在
      */
     public SymbolTableEntry get(String text) {
-        throw new NotImplementedException();
+        // TODO
+        // throw new NotImplementedException();
+        if (!has(text)) {
+            throw new RuntimeException("This symbol does not exist in the table!");
+        } else {
+            return SYMBOL_TABLE.get(text);
+        }
     }
 
     /**
@@ -35,7 +38,15 @@ public class SymbolTable {
      * @throws RuntimeException 该符号已在表中存在
      */
     public SymbolTableEntry add(String text) {
-        throw new NotImplementedException();
+        // TODO
+        // throw new NotImplementedException();
+        if (has(text)) {
+            throw new RuntimeException("This symbol already exists in the table!");
+        } else {
+            SymbolTableEntry symbolTableEntry = new SymbolTableEntry(text);
+            SYMBOL_TABLE.put(text, symbolTableEntry);
+            return symbolTableEntry;
+        }
     }
 
     /**
@@ -45,7 +56,9 @@ public class SymbolTable {
      * @return 该符号的条目是否位于符号表中
      */
     public boolean has(String text) {
-        throw new NotImplementedException();
+        // TODO
+        // throw new NotImplementedException();
+        return SYMBOL_TABLE.containsKey(text);
     }
 
     /**
@@ -54,7 +67,9 @@ public class SymbolTable {
      * @return 符号表的所有条目
      */
     private Map<String, SymbolTableEntry> getAllEntries() {
-        throw new NotImplementedException();
+        // TODO
+        // throw new NotImplementedException();
+        return Collections.unmodifiableMap(SYMBOL_TABLE);
     }
 
     /**
@@ -74,5 +89,8 @@ public class SymbolTable {
 
         FileUtils.writeLines(path, lines);
     }
+
+    private static final Map<String, SymbolTableEntry> SYMBOL_TABLE = new HashMap<>();
+
 }
 
