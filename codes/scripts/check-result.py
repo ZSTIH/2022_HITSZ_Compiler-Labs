@@ -7,7 +7,7 @@ id_dict = {1: ["token.txt", "old_symbol_table.txt"], 2: ["parser_list.txt"], 3: 
     "ir_emulate_result.txt", "new_symbol_table.txt"], 4: ["assembly_language.asm"]}
 
 # 需要改为你自己的 rars.jar 路径
-rars_path = "/home/test/rars.jar"
+rars_path = "../rars.jar"
 
 
 if __name__ == '__main__':
